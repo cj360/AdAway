@@ -90,9 +90,6 @@ public class AdAwayDatabase extends SQLiteOpenHelper {
         insertHostsSource(insertStmt,
                 "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext");
 
-        // http://someonewhocares.org/hosts/
-        insertHostsSource(insertStmt, "http://someonewhocares.org/hosts/zero"); 
-
         // https://hostsfile.mine.nu/
         insertHostsSource(insertStmt, "https://hostsfile.mine.nu/Hosts");
 
