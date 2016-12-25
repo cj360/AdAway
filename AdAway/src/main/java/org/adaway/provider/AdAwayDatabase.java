@@ -93,6 +93,12 @@ public class AdAwayDatabase extends SQLiteOpenHelper {
         // https://hostsfile.mine.nu/
         insertHostsSource(insertStmt, "https://hostsfile.mine.nu/Hosts");
 
+	// Malvertising list by Disconnect
+	insertHostsSource(insertStmt, "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt");
+
+	// Malware list by Disconnect
+	insertHostsSource(insertStmt, "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt");
+
         // AdAway's own mobile hosts
         insertHostsSource(insertStmt, "https://adaway.org/hosts.txt");
     }
