@@ -2,7 +2,7 @@
  * Copyright (C) 2011-2012 Dominik Schürmann <dominik@dominikschuermann.de>
  *
  * This file is part of AdAway.
- * 
+ *
  * AdAway is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -93,11 +93,8 @@ public class AdAwayDatabase extends SQLiteOpenHelper {
         // https://hostsfile.mine.nu/
         insertHostsSource(insertStmt, "https://hostsfile.mine.nu/Hosts");
 
-	// Malvertising list by Disconnect
-	insertHostsSource(insertStmt, "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt");
-
-	// Malware list by Disconnect
-	insertHostsSource(insertStmt, "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt");
+	      // MalwareDomainList.com Hosts List
+	      insertHostsSource(insertStmt, "https://www.malwaredomainlist.com/hostslist/hosts.txt");
 
         // AdAway's own mobile hosts
         insertHostsSource(insertStmt, "https://adaway.org/hosts.txt");
@@ -208,7 +205,7 @@ public class AdAwayDatabase extends SQLiteOpenHelper {
             db.execSQL("UPDATE " + Tables.HOSTS_SOURCES
                     + " SET url=\"https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext\""
                     + " WHERE url=\"http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext\"");
-        } 
+        }
         if (oldVersion <= 13) {
             // change http://hosts-file.net/ad_servers.txt to https://hosts-file.net/ad_servers.txt
             db.execSQL("UPDATE " + Tables.HOSTS_SOURCES
